@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Slider Demo" />
+
+    <link rel="stylesheet" href="swiperstyle.css" />
+    <script src="swipermin.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="drop-slider">
+      <div class="moblie-title">Main TITLE</div>
+      <div class="slide-zone">
+        <div class="businslide">
+          <div class="web-title">Main TITLE</div>
+          <div class="highlight"></div>
+          <div class="controls">
+            <div class="swiper-control">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next next_btn">
+                <img src="img/next.png" alt="next" style="width: 20px" />
+              </div>
+              <div class="swiper-button-prev prev_btn">
+                <img src="img/prev.png" alt="prev" style="width: 20px" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider swiper-container">
+          <div class="swiper-wrapper">
+            <div class="box swiper-slide">
+              <img class="boximg" src="img/slider/1.png" />
+              <div style="padding-left: 20px; padding-top: 28px">
+                <div class="boxtitle">Title 1</div>
+                <div class="boxscrp">
+                  <ui>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li></ui
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box swiper-slide">
+              <img class="boximg" src="img/slider/2.png" />
+              <div style="padding-left: 20px; padding-top: 28px">
+                <div class="boxtitle">Title 2</div>
+                <div class="boxscrp">
+                  <ui>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                  </ui>
+                </div>
+              </div>
+            </div>
+            <div class="box swiper-slide">
+              <img class="boximg" src="img/slider/3.png" />
+              <div style="padding-left: 20px; padding-top: 28px">
+                <div class="boxtitle">Title 3</div>
+                <div class="boxscrp">
+                  <ui>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                  </ui>
+                </div>
+              </div>
+            </div>
+            <div class="box swiper-slide">
+              <img class="boximg" src="img/slider/4.png" />
+              <div style="padding-left: 20px; padding-top: 28px">
+                <div class="boxtitle">Title 4</div>
+                <div class="boxscrp">
+                  <ui>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                    <li>- Write an explanation.</li>
+                  </ui>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const options = {
+    loop: true,
+    speed: 1000,
+    slideToClickedSlide: true,
+    slidesPerView: "auto",
+    spaceBetween: 50,
+    centeredSlides: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        spaceBetween: 40,
+      },
+
+      // when window width is >= 640px
+      640: {
+        spaceBetween: 40,
+      },
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  };
+  let swiper = new Swiper(".slider", options);
+  function reportWindowSize() {
+    swiper.destroy();
+    swiper = new Swiper(".slider", options);
+  }
+
+  window.onresize = reportWindowSize;
+</script>
